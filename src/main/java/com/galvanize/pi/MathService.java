@@ -59,4 +59,9 @@ public class MathService {
         response += String.join(" + ", params.values());
         return response += " = " + total;
     }
+
+    @RequestMapping("/volume/{x}/{y}/{z}")
+    public Object volume(WebRequest wr, @PathVariable String x, @PathVariable String y, @PathVariable String z) {
+        return "The volume of a " + x + "x" + y + "x" + z + " rectangle is " + (Integer.parseInt(x) * Integer.parseInt(y) * Integer.parseInt(z));
+    }
 }

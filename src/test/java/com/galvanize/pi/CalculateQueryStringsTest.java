@@ -89,4 +89,26 @@ class CalculateQueryStringsTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("4 + 5 + 6 = 15"));
     }
+
+    @Test
+    void testVolumeRequestMappingPost() throws Exception{
+        RequestBuilder request = MockMvcRequestBuilders.post("/math/volume/3/4/5");
+
+        this.mvc.perform(request)
+                .andExpect(status().isOk())
+                .andExpect(content().string("The volume of a 3x4x5 rectangle is 60"));
+
+    }
+
+    @Test
+    void testVolumeRequestMappingPatch() throws Exception{
+        RequestBuilder request = MockMvcRequestBuilders.post("/math/volume/6/7/8");
+
+        this.mvc.perform(request)
+                .andExpect(status().isOk())
+                .andExpect(content().string("The volume of a 6x7x8 rectangle is 336"));
+
+    }
+
+
 }
