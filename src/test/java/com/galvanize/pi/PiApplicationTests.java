@@ -14,7 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
-@WebMvcTest(MathPi.class)
+@WebMvcTest(MathService.class)
 //@SpringBootTest
 @RunWith(SpringRunner.class)
 class PiApplicationTests {
@@ -32,5 +32,3 @@ class PiApplicationTests {
 	}
 
 }
-// 3.141592653589793
-// /math/pi
